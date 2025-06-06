@@ -1,0 +1,144 @@
+:root {
+    --primary-color: #3b82f6;
+    --secondary-color: #10b981;
+    --background-color: #f4f4f8;
+    --card-background: #ffffff;
+    --text-color: #1f2937;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-analytics {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--background-color);
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.feedback-analytics h2 {
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+.analytics-section {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+}
+
+.analytics-section:hover {
+    transform: translateY(-5px);
+}
+
+.analytics-section h3 {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.summary-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.summary-section h3 {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.summary-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+.summary-card {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    min-width: 200px;
+    transition: all 0.3s ease;
+}
+
+.summary-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.summary-card h4 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.summary-card p {
+    color: var(--text-color);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Loading and Error States */
+.loading-indicator,
+.error-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    font-size: 1.2rem;
+    color: var(--text-color);
+    box-shadow: var(--box-shadow);
+}
+
+.loading-indicator {
+    color: var(--primary-color);
+}
+
+.error-message {
+    color: #dc2626;
+    background-color: #fee2e2;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .feedback-analytics {
+        padding: 1rem;
+    }
+
+    .summary-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .summary-card {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+/* Chart Customization */
+.recharts-wrapper {
+    font-family: 'Inter', sans-serif;
+}
+
+.recharts-legend-item {
+    margin-right: 1rem !important;
+}

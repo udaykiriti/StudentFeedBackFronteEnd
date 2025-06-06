@@ -1,0 +1,153 @@
+/* AdminFeedbackForm.css */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --text-color: #333;
+  --background-color: #f4f6f7;
+  --border-color: #e0e4e6;
+  --transition-speed: 0.3s;
+  --border-radius: 8px;
+}
+
+.af-admin-notification-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.af-admin-notification-form h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.af-admin-notification-form h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 50px;
+  height: 3px;
+  background-color: var(--primary-color);
+  transform: translateX(-50%);
+}
+
+.af-form-group {
+  margin-bottom: 1rem;
+}
+
+.af-form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.af-form-group input,
+.af-form-group select,
+.af-form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  transition: all var(--transition-speed) ease;
+  font-size: 1rem;
+}
+
+.af-form-group input:focus,
+.af-form-group select:focus,
+.af-form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.af-form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.af-form-group.af-checkbox-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.af-form-group.af-checkbox-group label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.af-form-group.af-checkbox-group input[type="checkbox"] {
+  width: auto;
+  margin-right: 0.5rem;
+  accent-color: var(--primary-color);
+}
+
+.af-submit-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+  font-size: 1rem;
+}
+
+.af-submit-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.af-submit-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .af-admin-notification-form {
+      width: 95%;
+      padding: 1.5rem;
+      margin: 1rem auto;
+  }
+}
+
+/* Custom Style for Select Options */
+.af-form-group select option {
+  padding: 0.5rem;
+}
+
+/* Subtle Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.af-admin-notification-form {
+  animation: fadeIn var(--transition-speed) ease-out;
+}
+
+/* Error and Validation States (Optional) */
+.af-form-group.error input,
+.af-form-group.error select,
+.af-form-group.error textarea {
+  border-color: #e74c3c;
+}
+
+.af-form-group.error label {
+  color: #e74c3c;
+}

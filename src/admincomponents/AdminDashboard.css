@@ -1,0 +1,257 @@
+.admin-layout {
+  display: flex;
+  height: 100vh;
+  background-color: #f3f4f6;
+  overflow: hidden;
+}
+
+.admin-sidebar {
+  position: fixed;
+  width: 80px;
+  height: 100vh;
+  background: linear-gradient(195deg, #475569, #1e293b);
+  color: white;
+  padding: 1.5rem 1rem;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  z-index: 50;
+}
+
+.admin-sidebar--expanded {
+  width: 280px;
+}
+
+.admin-sidebar__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
+}
+
+.admin-sidebar__logo-icon {
+  min-width: 28px;
+}
+
+.admin-sidebar__logo-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.admin-sidebar--expanded .admin-sidebar__logo-text {
+  opacity: 1;
+}
+
+.admin-sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-sidebar__nav-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.admin-sidebar__nav-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+}
+
+.admin-sidebar__nav-icon {
+  min-width: 20px;
+  margin-right: 12px;
+}
+
+.admin-sidebar__nav-text {
+  flex: 1;
+  text-align: left;
+  font-size: 0.875rem;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.admin-sidebar--expanded .admin-sidebar__nav-text {
+  opacity: 1;
+}
+
+.admin-sidebar__chevron {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.admin-sidebar__nav-item:hover .admin-sidebar__chevron {
+  opacity: 1;
+}
+
+/* Main Content Styles */
+.admin-main {
+  flex: 1;
+  margin-left: 80px;
+  transition: margin-left 0.3s ease;
+}
+
+.admin-main--shifted {
+  margin-left: 280px;
+}
+
+.admin-header__menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: #1f2937;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.admin-header__menu-toggle:hover {
+  background-color: #f3f4f6;
+}
+
+.admin-header {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #e5e7eb;
+  z-index: 40;
+}
+
+.admin-header__container {
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-header__welcome {
+  flex: 1;
+}
+
+.admin-header__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.admin-header__date {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.admin-header__profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.admin-header__user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-header__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #475569;
+}
+
+.admin-header__user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-header__user-name {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #1f2937;
+}
+
+.admin-header__user-role {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.admin-header__logout {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.admin-header__logout:hover {
+  background-color: #b91c1c;
+}
+
+.admin-content {
+  padding: 2rem;
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+}
+
+.admin-content__container {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  min-height: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+/* Scrollbar Styles */
+.admin-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.admin-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.admin-content::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.admin-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.admin-sidebar__nav-item.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}

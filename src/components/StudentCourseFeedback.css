@@ -1,0 +1,205 @@
+.student-course-feedback {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 100%;
+}
+
+.student-course-feedback__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.student-course-feedback__header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.student-course-feedback__icon {
+  color: #2563eb;
+}
+
+.student-course-feedback__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.student-course-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.student-course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.student-course-card__content {
+  padding: 1rem;
+  text-align: center;
+}
+
+.student-course-card__content h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2563eb;
+  margin-bottom: 0.5rem;
+}
+
+.student-course-card__content p {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.student-course-card__department {
+  font-weight: 500;
+  color: #4b5563;
+}
+
+.student-course-feedback__empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Feedback Modal Styles */
+.student-feedback-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(31, 41, 55, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.student-feedback-modal__content {
+  background: white;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 500px;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.student-feedback-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.student-feedback-modal__close:hover {
+  background-color: #f3f4f6;
+}
+
+.student-feedback-modal__content h2 {
+  text-align: center;
+  color: #2563eb;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+}
+
+.student-feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.student-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.student-form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.student-form-group input,
+.student-form-group select,
+.student-form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  transition: border-color 0.2s ease;
+}
+
+.student-form-group input:focus,
+.student-form-group select:focus,
+.student-form-group textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.student-form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.student-form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.student-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.student-btn-primary {
+  background-color: #2563eb;
+  color: white;
+}
+
+.student-btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+.student-btn-secondary {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+.student-btn-secondary:hover {
+  background-color: #e5e7eb;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .student-course-feedback__grid {
+      grid-template-columns: 1fr;
+  }
+}

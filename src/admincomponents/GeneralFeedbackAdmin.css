@@ -1,0 +1,195 @@
+/* Base Styles and Variables */
+:root {
+    --primary-color: #2563eb;
+    --primary-dark: #1e40af;
+    --success-color: #059669;
+    --warning-color: #d97706;
+    --danger-color: #dc2626;
+    --text-primary: #1f2937;
+    --text-secondary: #4b5563;
+    --text-light: #9ca3af;
+    --bg-light: #f3f4f6;
+    --bg-white: #ffffff;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --transition-all: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Layout */
+  .admin-dashboard {
+    min-height: 100vh;
+    background-color: var(--bg-light);
+  }
+  
+  /* Stats Cards */
+  .stats-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .stat-card {
+    background: var(--bg-white);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-all);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 12px -1px rgb(0 0 0 / 0.15);
+  }
+  
+  .stat-card h3 {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  
+  .stat-card p {
+    color: var(--text-primary);
+    font-size: 1.875rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  /* Charts Section */
+  .charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .chart-container {
+    background: var(--bg-white);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .chart-container h3 {
+    color: var(--text-primary);
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Dashboard Tabs */
+  .dashboard-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 0.5rem;
+    background: var(--bg-white);
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .tab-button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-weight: 500;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: var(--transition-all);
+  }
+  
+  .tab-button:hover {
+    color: var(--primary-color);
+    background: var(--bg-light);
+  }
+  
+  .tab-button.active {
+    background: var(--primary-color);
+    color: white;
+  }
+  
+  /* Recent Feedback Table */
+  .recent-feedback {
+    background: var(--bg-white);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md);
+    margin-top: 2rem;
+  }
+  
+  .recent-feedback table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  
+  .recent-feedback th,
+  .recent-feedback td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--bg-light);
+  }
+  
+  .recent-feedback th {
+    color: var(--text-secondary);
+    font-weight: 500;
+    background: var(--bg-light);
+  }
+  
+  .recent-feedback tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .recent-feedback tbody tr {
+    transition: var(--transition-all);
+  }
+  
+  .recent-feedback tbody tr:hover {
+    background: var(--bg-light);
+  }
+  
+  /* Loading State */
+  .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .stats-cards {
+      grid-template-columns: 1fr;
+    }
+    
+    .charts-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .dashboard-tabs {
+      flex-direction: column;
+    }
+  }
+  
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--bg-light);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--text-light);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+  }
